@@ -2,13 +2,12 @@
 
 <div class="card">
     <div class="card-body">
-        <h5 class="card-title">{{ pageTitle }}</h5>
-
-        <a routerLink="/user/create">
-            <button>+ NEW USER</button>   
-          </a> 
-
-        <table class="table">  
+        <button class="create-btn">
+            <a routerLink="/product/create">
+                <img src="../../../assets/buttons/button_create-user.png"/>
+            </a>
+        </button>
+        <table class="styled-table">  
             <thead>
 
                 <tr>
@@ -37,11 +36,11 @@
                     <td scope="row">{{ user.isReviewer }}</td>
                     <td> 
                         <a routerLink="/product/detail/{{ user.id }}">
-                            <img class="icon" src="../../assets/detail.png"></a>
+                            <img class="icon" src="../../assets/icons/detail.png"></a>
                     </td>
                     <td> 
                         <a routerLink="/product/edit/{{ user.id }}">
-                            <img class="icon"  src="../../assets/edit.png"></a>
+                            <img class="icon"  src="../../assets/icons/edit.png"></a>
                     </td>
                 </tr>
 

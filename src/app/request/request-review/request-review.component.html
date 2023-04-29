@@ -1,44 +1,65 @@
 <app-menu></app-menu>
 
-<div class="card">
-    <div class="card-body">
-        <h5 class="card-title">{{ pageTitle }}</h5>
-        <table class="table">  
-            <thead>
+<div class="container">  
+    <form id="contact" action="" method="post">
+      <h3>Review Request</h3>
+      <br>
+      <fieldset>
+        <input placeholder="{{ request.submittedDate }}" type="text" tabindex="1" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="{{ request.dateNeeded }}" type="text" tabindex="2" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="{{ request.user.username }}" type="text" tabindex="3" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="{{ request.description }}" type="text" tabindex="4" required>
+      </fieldset>
+      <fieldset>
+        <input list="delivery">
+        <datalist id="delivery">
+            <option value="Pickup"></option>
+            <option value="Robo Courier"></option>
+            <option value="Express Drone"></option>
+            <option value="Horseback"></option>
+        </datalist>
+      </fieldset>
+      <fieldset>
+        <input placeholder="{{ request.status }}" type="text" tabindex="3" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Reason for rejection" type="text" tabindex="3" required>
+      </fieldset>
+      <fieldset>
+        <button name="submit" type="approve" id="contact-submit" data-submit="...Sending">Approve</button>
+      </fieldset>
+      <fieldset>
+        <button name="submit" type="reject" id="contact-submit" data-submit="...Sending">Reject</button>
+      </fieldset>
+    </form>
+    <h2>Request Line Items</h2>
+  </div>
 
-                <tr>
-                    <th scope="col">Description</th>
-                    <th scope="col">Justification</th>
-                    <th scope="col">Submitted Date</th>
-                    <th scope="col">Date Needed</th>
-                    <th scope="col">Delivery Mode</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Total</th>
-                    <th scope="col">Detail</th>
-                    <th scope="col">Edit</th>
-                </tr> 
+  <table class="styled-table">
+    <thead>
+        <tr>
+            <th>Part Number:</th>
+            <th>Product Description:</th>
+            <th>Vendor:</th>
+            <th>Price:</th>
+            <th>Quantity:</th>
+            <th>Total:</th>
+        </tr>
+    </thead>
+    <tr>
+        <td>{{lineItem.product.partNbr}}</td>
+        <td>{{lineItem.product.name}}</td>
+        <td>{{lineItem.product.vendor.name}}</td>
+        <td>${{lineItem.product.price}}</td>
+        <td>{{lineItem.quantity}}</td>
+        <td>${{lineItem.quantity * lineItem.product.price}}</td>
+    </tr>
+</table>
 
-            </thead>
-
-            <tbody>
-
-                <tr *ngFor="let request of requests">
-                    <td scope="row">{{ request.description }}</td>
-                    <td scope="row">{{ request.justification }}</td>
-                    <td scope="row">{{ request.submittedDate }}</td>
-                    <td scope="row">{{ request.dateNeeded }}</td>
-                    <td scope="row">{{ request.deliveryMode }}</td>
-                    <td scope="row">{{ request.status }}</td>
-                    <td scope="row">{{ request.total }}</td>
-                    <td> 
-                        <a routerLink="/product/detail/{{ request.id }}">
-                            <img class="icon" src="../../assets/detail.png"></a>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table> 
-    </div>
-</div>
-
-<app-footer></app-footer>
+  <app-footer></app-footer>

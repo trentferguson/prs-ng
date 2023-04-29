@@ -1,12 +1,14 @@
 <app-menu></app-menu>
 
 <div class="card">
+    <br>
     <div class="card-body">
-        <h5 class="card-title">{{ pageTitle }}</h5>
-
-        <button>
-            <a routerLink="/product/create">+ NEW PRODUCT</a></button>
-        <table class="table">  
+        <button class="create-btn">
+            <a routerLink="/product/create">
+                <img src="../../../assets/buttons/button_create-product.png"/>
+            </a>
+        </button>
+        <table class="styled-table">  
             <thead>
                 <tr>
                     <th scope="col">Part Number</th>
@@ -24,17 +26,17 @@
                 <tr *ngFor="let product of products">
                     <td scope="row">{{ product.partNbr }}</td>
                     <td scope="row">{{ product.name }}</td>
-                    <td scope="row">{{ product.price }}</td>
+                    <td scope="row">${{ product.price }}</td>
                     <td scope="row">{{ product.unit }}</td>
                     <td scope="row">{{ product.photoPath }}</td>
                     <td scope="row">{{ product.vendor.name }}</td>
                     <td> 
                         <a routerLink="/product/detail/{{ product.id }}">
-                            <img class="icon" src="../../assets/detail.png"></a>
+                            <img class="icon" src="../../assets/icons/detail.png"></a>
                     </td>
                     <td> 
                         <a routerLink="/product/edit/{{ product.id }}">
-                            <img class="icon"  src="../../assets/edit.png"></a>
+                            <img class="icon"  src="../../assets/icons/edit.png"></a>
                     </td>
                 </tr>
    

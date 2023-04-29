@@ -1,1 +1,62 @@
 <app-menu></app-menu>
+
+<div class="container">  
+    <form id="contact" action="" method="post">
+      <h3>Edit Request</h3>
+      <br>
+      <fieldset>
+        <input placeholder="{{ request.submittedDate }}" type="text" tabindex="1" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="{{ request.dateNeeded }}" type="text" tabindex="2" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="{{ request.user.username }}" type="text" tabindex="3" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="{{ request.description }}" type="text" tabindex="4" required>
+      </fieldset>
+      <fieldset>
+        <input list="delivery">
+        <datalist id="delivery">
+            <option value="Pickup"></option>
+            <option value="Robo Courier"></option>
+            <option value="Express Drone"></option>
+            <option value="Horseback"></option>
+        </datalist>
+      </fieldset>
+      <fieldset>
+        <input placeholder="{{ request.status }}" type="text" tabindex="3" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Reason for rejection" type="text" tabindex="3" required>
+      </fieldset>
+      <fieldset>
+        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+      </fieldset>
+    </form>
+    <h2>Request Line Items</h2>
+  </div>
+
+  <table class="styled-table">
+    <thead>
+        <tr>
+            <th>Part Number:</th>
+            <th>Product Description:</th>
+            <th>Vendor:</th>
+            <th>Price:</th>
+            <th>Quantity:</th>
+            <th>Total:</th>
+        </tr>
+    </thead>
+    <tr>
+        <td>{{lineItem.product.partNbr}}</td>
+        <td>{{lineItem.product.name}}</td>
+        <td>{{lineItem.product.vendor.name}}</td>
+        <td>${{lineItem.product.price}}</td>
+        <td>{{lineItem.quantity}}</td>
+        <td>${{lineItem.quantity * lineItem.product.price}}</td>
+    </tr>
+</table>
+
+  <app-footer></app-footer>

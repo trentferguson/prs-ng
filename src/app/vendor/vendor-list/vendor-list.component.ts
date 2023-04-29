@@ -17,6 +17,7 @@ export class VendorListComponent {
             "city": "Boston",
             "state": "MA",
             "zip": "02108",
+            "phone": "5137630477",
             "email": "support@NukaCola.com"
         }
     ];

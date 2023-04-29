@@ -1,7 +1,7 @@
 <app-menu></app-menu>
 
 <div>
-    <table class="table table-sm"> //test
+    <table class="table table-sm"> 
         <tr>
             <td>Date Submitted:</td>
                 <td>
@@ -53,13 +53,36 @@
         <tr>
             <td> 
                 <a routerLink="/request/edit/{{ request.id }}">
-                    <img class="icon"  src="../../assets/edit.png"></a>
+                    <img class="icon"  src="../../assets/icons/edit.png"></a>
             </td>
         </tr>
         <tr>
             <td> 
-                <img class="icon"  src="../../assets/delete.png">
+                <img class="icon"  src="../../assets/icons/delete.png">
             </td>
         </tr>
     </table>
+    <h2>Request Line Items</h2>
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Part Number:</th>
+                <th>Product Description:</th>
+                <th>Vendor:</th>
+                <th>Price:</th>
+                <th>Quantity:</th>
+                <th>Total:</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>{{lineItem.product.partNbr}}</td>
+            <td>{{lineItem.product.name}}</td>
+            <td>{{lineItem.product.vendor.name}}</td>
+            <td>${{lineItem.product.price}}</td>
+            <td>{{lineItem.quantity}}</td>
+            <td>${{lineItem.quantity * lineItem.product.price}}</td>
+        </tr>
+    </table>
 </div>
+
+<app-footer></app-footer>
