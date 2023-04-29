@@ -1,0 +1,75 @@
+<app-menu></app-menu>
+
+<div>
+    <table class="table table-sm">
+        <tr>
+            <td>Vendor Code:</td>
+                <td>
+                    <input placeholder="{{ vendor.code }}" type="text"> 
+                </td>
+        </tr>
+        <tr>
+            <td>Vendor Name:</td>
+                <td>
+                    <input placeholder="{{ vendor.name }}" type="text"> 
+                </td>
+        </tr>
+        <tr>
+            <td>Address:</td>
+                <td>
+                    <input placeholder="{{ vendor.address }}" type="text">
+                </td>
+        </tr>
+        <tr>
+            <td>City:</td>
+                <td>
+                    <input placeholder="{{ vendor.city }}" type="text">
+                </td>
+        </tr>
+        <tr>
+            <td>State:</td>
+                <td>
+                    <input placeholder="{{ vendor.state }}" type="text"> 
+                </td>
+        </tr>
+        <tr>
+            <td>Zip Code:</td>
+                <td>
+                    <input placeholder="{{ vendor.zip }}" type="text">
+                </td>
+        </tr>
+        <tr>
+            <td>Phone Number:</td>
+                <td>
+                    <input placeholder="{{ vendor.phone }}" type="text">
+                </td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+                <td>
+                    <input placeholder="{{ vendor.email }}" type="text">
+                </td>
+        </tr>
+        <tr>
+            <td>Reviewer Status:</td>
+                <td></td>
+        </tr>
+        <tr>
+            <td>Admin Status:</td>
+                <td></td>
+        </tr>
+        <tr>
+            <td> 
+                <a routerLink="/vendor/edit/{{ vendor.id }}">
+                    <img class="icon"  src="../../assets/edit.png"></a>
+            </td>
+        </tr>
+        <tr>
+            <td> 
+                <img class="icon"  src="../../assets/delete.png">
+            </td>
+        </tr>
+    </table>
+</div>
+
+<app-footer></app-footer>

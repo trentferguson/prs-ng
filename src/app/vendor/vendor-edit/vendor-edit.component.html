@@ -1,0 +1,37 @@
+<app-menu></app-menu>
+
+<div class="container">  
+    <form id="contact" action="" method="post">
+      <h3>Edit Vendor</h3>
+      <br>
+      <fieldset>
+        <input placeholder="{{ vendor.code }}" type="text" tabindex="1" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="{{ vendor.name }}" type="text" tabindex="2" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="{{ vendor.address }}" type="text" tabindex="3" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="{{ vendor.city }}" type="text" tabindex="4" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="{{ vendor.state }}" type="text" tabindex="5" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="{{ vendor.zip }}" type="text" tabindex="6" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="{{ vendor.phone }}" type="text" tabindex="7" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="{{ vendor.email }}" type="text" tabindex="8" required>
+      </fieldset>
+      <fieldset>
+        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+      </fieldset>
+    </form>
+  </div>
+
+  <app-footer></app-footer>

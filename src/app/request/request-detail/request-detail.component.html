@@ -1,0 +1,65 @@
+<app-menu></app-menu>
+
+<div>
+    <table class="table table-sm">
+        <tr>
+            <td>Date Submitted:</td>
+                <td>
+                    <input placeholder="{{ request.submittedDate}}" type="text"> 
+                </td>
+        </tr>
+        <tr>
+            <td>Date Needed:</td>
+                <td>
+                    <input placeholder="{{ request.dateNeeded }}" type="text"> 
+                </td>
+        </tr>
+        <tr>
+            <td>User:</td>
+                <td>
+                    <input placeholder="{{ request.user.username }}" type="text">
+                </td>
+        </tr>
+        <tr>
+            <td>Description:</td>
+                <td>
+                    <input placeholder="{{ request.description }}" type="text">
+                </td>
+        </tr>
+        <tr>
+            <td>Justification:</td>
+                <td>
+                    <input placeholder="{{ request.justification }}" type="text"> 
+                </td>
+        </tr>
+        <tr>
+            <td>Delivery Mode:</td>
+                <td>
+                    <input placeholder="{{ request.deliveryMode }}" type="text">
+                </td>
+        </tr>
+        <tr>
+            <td>Status:</td>
+                <td>
+                    <input placeholder="{{ request.status }}" type="text">
+                </td>
+        </tr>
+        <tr>
+            <td>Rejection Reason:</td>
+                <td>
+                    <input placeholder="Reason for rejection" type="text">
+                </td>
+        </tr>
+        <tr>
+            <td> 
+                <a routerLink="/request/edit/{{ request.id }}">
+                    <img class="icon"  src="../../assets/edit.png"></a>
+            </td>
+        </tr>
+        <tr>
+            <td> 
+                <img class="icon"  src="../../assets/delete.png">
+            </td>
+        </tr>
+    </table>
+</div>

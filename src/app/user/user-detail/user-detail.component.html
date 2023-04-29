@@ -1,0 +1,61 @@
+<app-menu></app-menu>
+
+<div>
+    <table class="table table-sm">
+        <tr>
+            <td>First Name:</td>
+                <td>
+                    <input placeholder="{{ user.firstName }}" type="text"> 
+                </td>
+        </tr>
+        <tr>
+            <td>Last Name:</td>
+                <td>
+                    <input placeholder="{{ user.lastName }}" type="text"> 
+                </td>
+        </tr>
+        <tr>
+            <td>Phone Number:</td>
+                <td>
+                    <input placeholder="{{ user.phone }}" type="text">
+                </td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+                <td>
+                    <input placeholder="{{ user.email }}" type="text">
+                </td>
+        </tr>
+        <tr>
+            <td>Username:</td>
+                <td>
+                    <input placeholder="{{ user.username }}" type="text"> 
+                </td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+                <td>
+                    <input placeholder="{{ user.password }}" type="text">
+                </td>
+        </tr>
+        <tr>
+            <td>Reviewer Status:</td>
+                <td></td>
+        </tr>
+        <tr>
+            <td>Admin Status:</td>
+                <td></td>
+        </tr>
+        <tr>
+            <td> 
+                <a routerLink="/user/edit/{{ user.id }}">
+                    <img class="icon"  src="../../assets/edit.png"></a>
+            </td>
+        </tr>
+        <tr>
+            <td> 
+                <img class="icon"  src="../../assets/delete.png">
+            </td>
+        </tr>
+    </table>
+</div>

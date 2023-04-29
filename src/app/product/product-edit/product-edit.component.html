@@ -1,0 +1,36 @@
+<app-menu></app-menu>
+
+<div class="container">  
+    <form id="contact" action="" method="post">
+      <h3>Edit Product</h3>
+      <br>
+      <fieldset>
+        <input placeholder="{{ product.photoPath }}" type="text" tabindex="1" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="{{ product.partNbr }}" type="text" tabindex="2" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="{{ product.name }}" type="text" tabindex="3" required>
+      </fieldset>
+      <fieldset>
+        <input list="Vendors">
+        <datalist id="Vendors">
+            <option value="Vendor 1"></option>
+            <option value="Vendor 2"></option>
+            <option value="Vendor 3"></option>
+        </datalist>
+      </fieldset>
+      <fieldset>
+        <input placeholder="{{ product.unit }}" type="text" tabindex="5" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="{{ product.price }}" type="text" tabindex="6" required>
+      </fieldset>
+      <fieldset>
+        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+      </fieldset>
+    </form>
+  </div>
+
+  <app-footer></app-footer>

@@ -1,0 +1,53 @@
+<app-menu></app-menu>
+
+<div>
+    <table class="table table-sm">
+        <tr>
+            <td>Photo Path:</td>
+                <td>
+                    <input placeholder="{{ product.photoPath }}" type="text"> 
+                </td>
+        </tr>
+        <tr>
+            <td>Part Number:</td>
+                <td>
+                    <input placeholder="{{ product.partNbr }}" type="text"> 
+                </td>
+        </tr>
+        <tr>
+            <td>Name:</td>
+                <td>
+                    <input placeholder="{{ product.name }}" type="text">
+                </td>
+        </tr>
+        <tr>
+            <td>Vendor:</td>
+                <td>
+                    <input placeholder="{{ product.vendor.name }}" type="text">
+                </td>
+        </tr>
+        <tr>
+            <td>Unit:</td>
+                <td>
+                    <input placeholder="{{ product.unit }}" type="text"> 
+                </td>
+        </tr>
+        <tr>
+            <td>Pri ce:</td>
+                <td>
+                    <input placeholder="{{ product.price }}" type="text">
+                </td>
+        </tr>
+        <tr>
+            <td> 
+                <a routerLink="/product/edit/{{ product.id }}">
+                    <img class="icon"  src="../../assets/edit.png"></a>
+            </td>
+        </tr>
+        <tr>
+            <td> 
+                <img class="icon"  src="../../assets/delete.png">
+            </td>
+        </tr>
+    </table>
+</div>

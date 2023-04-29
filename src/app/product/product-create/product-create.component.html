@@ -1,0 +1,36 @@
+<app-menu></app-menu>
+
+<div class="container">  
+    <form id="contact" action="" method="post">
+      <h3>Create New Product</h3>
+      <br>
+      <fieldset>
+        <input placeholder="Photo Link" type="text" tabindex="1" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Part Number" type="text" tabindex="2" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Product Name" type="text" tabindex="3" required>
+      </fieldset>
+      <fieldset>
+        <input list="Vendors">
+        <datalist id="Vendors">
+            <option value="Vendor 1"></option>
+            <option value="Vendor 2"></option>
+            <option value="Vendor 3"></option>
+        </datalist>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Unit" type="text" tabindex="5" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Price" type="text" tabindex="6" required>
+      </fieldset>
+      <fieldset>
+        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+      </fieldset>
+    </form>
+  </div>
+
+  <app-footer></app-footer>
