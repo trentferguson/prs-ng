@@ -1,4 +1,7 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute, ActivationEnd } from "@angular/router";
+import { UserService } from "src/app/service/user.service";
+import { User } from "src/model/user.class";
 
 @Component({
     selector: 'app-user-detail',
@@ -6,18 +9,18 @@ import { Component } from "@angular/core";
     styleUrls: ['./user-detail.component.css']
 })
 
-export class UserDetailComponent {
+export class UserDetailComponent implements OnInit {
     pageTitle: string = "User Detail";
-    user: any = 
-        {
-            "id": 1,
-            "username": "admin",
-            "password": "password",
-            "firstName": "Bulby",
-            "lastName": "Saur",
-            "phone": "5135551234",
-            "email": "admin@bulbasaur.com",
-            "admin": true,
-            "reviewer": true
-        };
+    user: User = new User();
+    id: number;
+
+    constructor(
+        private userService: UserService,
+        private route: ActivatedRoute
+    ) {}
+
+    ngOnInit(): void {
+        this.route.params.subscribe(p => this.id = p['id']);
+        this.userService.get(this.id).subscribe(jr => this.user = jr as User);
+    }
 }

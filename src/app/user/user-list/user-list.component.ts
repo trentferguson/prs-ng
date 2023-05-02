@@ -1,4 +1,7 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { User } from "src/model/user.class";
+import { UserService } from "src/app/service/user.service";
+
 
 @Component({
     selector: 'app-user-list',
@@ -6,63 +9,18 @@ import { Component } from "@angular/core";
     styleUrls: ['./user-list.component.css']
 })
 
-export class UserListComponent {
+export class UserListComponent implements OnInit{
     pageTitle: string = "User List";
-    users: any[] = [
-        {
-            "id": 1,
-            "username": "admin",
-            "password": "password",
-            "firstName": "Bulby",
-            "lastName": "Saur",
-            "phone": "5135551234",
-            "email": "admin@bulbasaur.com",
-            "admin": true,
-            "reviewer": true
-        },
-        {
-            "id": 2,
-            "username": "kblakley",
-            "password": "password",
-            "firstName": "Katie",
-            "lastName": "Blakley",
-            "phone": "5135556512",
-            "email": "kblakley@gmail.com",
-            "admin": false,
-            "reviewer": false
-        },
-        {
-            "id": 6,
-            "username": "cameronicus",
-            "password": "test",
-            "firstName": "Cameron",
-            "lastName": "Mower",
-            "phone": "5135551424",
-            "email": "123@gmail.com",
-            "admin": true,
-            "reviewer": true
-        },
-        {
-            "id": 7,
-            "username": "asdfasdf",
-            "password": "password",
-            "firstName": "ff",
-            "lastName": "ff",
-            "phone": "5135556512",
-            "email": "kblakley@gmail.com",
-            "admin": false,
-            "reviewer": false
-        },
-        {
-            "id": 12,
-            "username": "lillith",
-            "password": "remy123",
-            "firstName": "Lill",
-            "lastName": "Verzella",
-            "phone": "5135556512",
-            "email": "lilliv@gmail.com",
-            "admin": false,
-            "reviewer": false
-        }
-    ];
+    users: User[] = [];
+
+    constructor(
+        private userService: UserService
+    ) {}
+
+    ngOnInit(): void {
+        this.userService.list().subscribe(jr => {
+            this.users = jr as User[];
+        })
+    }
+
 }

@@ -3,7 +3,7 @@
 <div class="card">
     <div class="card-body">
         <button class="create-btn">
-            <a routerLink="/product/create">
+            <a routerLink="/user/create">
                 <img src="../../../assets/buttons/button_create-user.png"/>
             </a>
         </button>
@@ -32,14 +32,14 @@
                     <td scope="row">{{ user.username }}</td>
                     <td scope="row">{{ user.phone }}</td>
                     <td scope="row">{{ user.email }}</td>
-                    <td scope="row">{{ user.isAdmin }}</td>
-                    <td scope="row">{{ user.isReviewer }}</td>
+                    <td scope="row">{{ user.admin }}</td>
+                    <td scope="row">{{ user.reviewer }}</td>
                     <td> 
-                        <a routerLink="/product/detail/{{ user.id }}">
+                        <a routerLink="/user/detail/{{ user.id }}">
                             <img class="icon" src="../../assets/icons/detail.png"></a>
                     </td>
                     <td> 
-                        <a routerLink="/product/edit/{{ user.id }}">
+                        <a routerLink="/user/edit/{{ user.id }}">
                             <img class="icon"  src="../../assets/icons/edit.png"></a>
                     </td>
                 </tr>

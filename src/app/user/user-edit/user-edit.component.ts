@@ -1,4 +1,7 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { User } from "src/model/user.class";
+import { UserService } from "src/app/service/user.service";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
     selector: 'app-user-edit',
@@ -6,18 +9,18 @@ import { Component } from "@angular/core";
     styleUrls: ['./user-edit.component.css']
 })
 
-export class UserEditComponent {
+export class UserEditComponent implements OnInit {
     pageTitle: string = "User Edit";
-    user: any = 
-        {
-            "id": 1,
-            "username": "admin",
-            "password": "password",
-            "firstName": "Bulby",
-            "lastName": "Saur",
-            "phone": "5135551234",
-            "email": "admin@bulbasaur.com",
-            "admin": true,
-            "reviewer": true
-        };
+    user: User = new User();
+    id: number;
+
+    constructor(
+       private userService: UserService,
+       private route: ActivatedRoute 
+    ) {}
+
+    ngOnInit(): void {
+        this.route.params.subscribe(p => this.id = p['id']);
+        this.userService.get(this.id).subscribe(j => this.user = j as User);
+    }
 }

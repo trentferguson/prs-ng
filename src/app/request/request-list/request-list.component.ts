@@ -1,4 +1,6 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { Request } from "src/model/request.class";
+import { RequestService } from "src/app/service/request.service";
 
 @Component({
     selector: 'app-request-list',
@@ -6,52 +8,17 @@ import { Component } from "@angular/core";
     styleUrls: ['./request-list.component.css']
 })
 
-export class RequestListComponent {
+export class RequestListComponent implements OnInit{
     pageTitle: string = "Request List";
-    requests: any[] = [
-        {
-            "id": 1,
-            "description": "test request test",
-            "justification": "test",
-            "rejectionReason": "test",
-            "deliveryMode": "test",
-            "submittedDate": "2023-01-18T00:00:00",
-            "dateNeeded": "2023-01-18T00:00:00",
-            "status": "APPROVED",
-            "total": 9.99,
-            "user": {
-                "id": 1,
-                "username": "admin",
-                "password": "password",
-                "firstName": "Bulby",
-                "lastName": "Saur",
-                "phone": "5135551234",
-                "email": "admin@bulbasaur.com",
-                "admin": true,
-                "reviewer": true
-            }
-        },
-        {
-            "id": 2,
-            "description": "super fun request",
-            "justification": "fun",
-            "rejectionReason": "fun",
-            "deliveryMode": "fun",
-            "submittedDate": "2023-01-18T00:00:00",
-            "dateNeeded": "2023-01-18T00:00:00",
-            "status": "NEW",
-            "total": 29.99,
-            "user": {
-                "id": 2,
-                "username": "kblakley",
-                "password": "password",
-                "firstName": "Katie",
-                "lastName": "Blakley",
-                "phone": "5135556512",
-                "email": "kblakley@gmail.com",
-                "admin": false,
-                "reviewer": false
-            }
-        }
-    ];
+    requests: Request[] = [];
+
+    constructor(
+        private requestService: RequestService
+    ) {}
+
+    ngOnInit(): void {
+        this.requestService.listRequests().subscribe(j => {
+            this.requests = j as unknown as Request[];
+        })
+    }
 }

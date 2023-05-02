@@ -1,4 +1,6 @@
 import { Component } from "@angular/core";
+import { Request } from "src/model/request.class";
+import { LineItem } from "src/model/line-item.class";
 
 @Component({
     selector: 'app-request-detail',
@@ -8,73 +10,6 @@ import { Component } from "@angular/core";
 
 export class RequestDetailComponent {
     pageTitle: string = "Request Detail";
-    request: any = 
-    {
-        "id": 1,
-        "description": "test request test",
-        "justification": "test",
-        "rejectionReason": "test",
-        "deliveryMode": "test",
-        "submittedDate": "2023-01-18T00:00:00",
-        "dateNeeded": "2023-01-18T00:00:00",
-        "status": "APPROVED",
-        "total": 9.99,
-        "user": {
-            "id": 1,
-            "username": "admin",
-            "password": "password",
-            "firstName": "Bulby",
-            "lastName": "Saur",
-            "phone": "5135551234",
-            "email": "admin@bulbasaur.com",
-            "admin": true,
-            "reviewer": true
-        }
-    }
-
-    lineItem: any = 
-    {
-        "id": 1,
-        "request": {
-            "id": 1,
-            "description": "test request test",
-            "justification": "test",
-            "rejectionReason": "test",
-            "deliveryMode": "test",
-            "submittedDate": "2023-01-18T00:00:00",
-            "dateNeeded": "2023-01-18T00:00:00",
-            "status": "APPROVED",
-            "total": 9.99,
-            "user": {
-                "id": 1,
-                "username": "admin",
-                "password": "password",
-                "firstName": "Bulby",
-                "lastName": "Saur",
-                "phone": "5135551234",
-                "email": "admin@bulbasaur.com",
-                "admin": true,
-                "reviewer": true
-            }
-        },
-        "product": {
-            "id": 1,
-            "name": "Nuka Cola Quantum",
-            "price": 11.99,
-            "unit": "each",
-            "photoPath": null,
-            "vendor": {
-                "id": 1,
-                "code": "CODE-0076",
-                "name": "Nuka Cola",
-                "address": "76 Commonwealth Drive",
-                "city": "Boston",
-                "state": "MA",
-                "zip": "02108",
-                "email": "support@NukaCola.com"
-            },
-            "partNbr": "NC-0023"
-        },
-        "quantity": 555
-    }
+    request: Request = new Request();
+    lineItem: LineItem = new LineItem();
 }

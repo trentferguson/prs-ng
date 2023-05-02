@@ -1,4 +1,6 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { Vendor } from "src/model/vendor.class";
+import { VendorService } from "src/app/service/vendor.service";
 
 @Component({
     selector: 'app-vendor-list',
@@ -6,19 +8,17 @@ import { Component } from "@angular/core";
     styleUrls: ['./vendor-list.component.css']
 })
 
-export class VendorListComponent {
+export class VendorListComponent implements OnInit {
     pageTitle: string = "Vendor List";
-    vendors: any[] = [
-        {
-            "id": 1,
-            "code": "CODE-0076",
-            "name": "Nuka Cola",
-            "address": "76 Commonwealth Drive",
-            "city": "Boston",
-            "state": "MA",
-            "zip": "02108",
-            "phone": "5137630477",
-            "email": "support@NukaCola.com"
-        }
-    ];
+    vendors: Vendor[] = [];
+
+    constructor(
+        private vendorService: VendorService
+    ) {}
+
+    ngOnInit() {
+        this.vendorService.list().subscribe(jr => {
+            this.vendors = jr as unknown as Vendor[];
+          });
+    }
 }

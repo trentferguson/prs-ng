@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Vendor } from "src/model/vendor.class";
 
 @Component({
     selector: 'app-vendor-detail',
@@ -8,15 +9,5 @@ import { Component } from "@angular/core";
 
 export class VendorDetailComponent {
     pageTitle: string = "Vendor Detail";
-    vendor: any = 
-    {
-        "id": 1,
-        "code": "CODE-0076",
-        "name": "Nuka Cola",
-        "address": "76 Commonwealth Drive",
-        "city": "Boston",
-        "state": "MA",
-        "zip": "02108",
-        "email": "support@NukaCola.com"
-    }
+    vendor: Vendor = new Vendor ();
 }
