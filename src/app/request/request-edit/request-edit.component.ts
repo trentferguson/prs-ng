@@ -1,4 +1,10 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { Request } from "src/model/request.class";
+import { RequestService } from "src/app/service/request.service";
+import { ActivatedRoute } from "@angular/router";
+import { User } from "src/model/user.class";
+import { UserService } from "src/app/service/user.service";
+import { LineItem } from "src/model/line-item.class";
 
 @Component({
     selector: 'app-request-edit',
@@ -6,75 +12,18 @@ import { Component } from "@angular/core";
     styleUrls: ['./request-edit.component.css']
 })
 
-export class RequestEditComponent {
+export class RequestEditComponent implements OnInit {
     pageTitle: string = "Request Edit";
-    request: any = 
-    {
-        "id": 1,
-        "description": "test request test",
-        "justification": "test",
-        "rejectionReason": "test",
-        "deliveryMode": "test",
-        "submittedDate": "2023-01-18T00:00:00",
-        "dateNeeded": "2023-01-18T00:00:00",
-        "status": "APPROVED",
-        "total": 9.99,
-        "user": {
-            "id": 1,
-            "username": "admin",
-            "password": "password",
-            "firstName": "Bulby",
-            "lastName": "Saur",
-            "phone": "5135551234",
-            "email": "admin@bulbasaur.com",
-            "admin": true,
-            "reviewer": true
-        }
-    }
+    request: Request = new Request();
+    lineItems: LineItem[] = [];
+    id: number;
 
-    lineItem: any = 
-    {
-        "id": 1,
-        "request": {
-            "id": 1,
-            "description": "test request test",
-            "justification": "test",
-            "rejectionReason": "test",
-            "deliveryMode": "test",
-            "submittedDate": "2023-01-18T00:00:00",
-            "dateNeeded": "2023-01-18T00:00:00",
-            "status": "APPROVED",
-            "total": 9.99,
-            "user": {
-                "id": 1,
-                "username": "admin",
-                "password": "password",
-                "firstName": "Bulby",
-                "lastName": "Saur",
-                "phone": "5135551234",
-                "email": "admin@bulbasaur.com",
-                "admin": true,
-                "reviewer": true
-            }
-        },
-        "product": {
-            "id": 1,
-            "name": "Nuka Cola Quantum",
-            "price": 11.99,
-            "unit": "each",
-            "photoPath": null,
-            "vendor": {
-                "id": 1,
-                "code": "CODE-0076",
-                "name": "Nuka Cola",
-                "address": "76 Commonwealth Drive",
-                "city": "Boston",
-                "state": "MA",
-                "zip": "02108",
-                "email": "support@NukaCola.com"
-            },
-            "partNbr": "NC-0023"
-        },
-        "quantity": 555
+    constructor(
+        private requestService: RequestService,
+        private route: ActivatedRoute) {}
+
+    ngOnInit(): void {
+        this.route.params.subscribe(p => this.id = p['id']);
+        this.requestService.getRequest(this.id).subscribe(j => this.request = j as Request);
     }
 }

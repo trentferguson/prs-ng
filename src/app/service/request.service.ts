@@ -17,7 +17,7 @@ export class RequestService {
     }
 
     getRequest(id: number): Observable<Request> {
-        return this.http.get(this.url + id) as Observable<Request>;
+        return this.http.get(this.url + "/" + id) as Observable<Request>;
     }
       
     saveRequest(request: Request): Observable<Request> {

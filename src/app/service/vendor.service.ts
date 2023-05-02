@@ -17,7 +17,7 @@ export class VendorService {
     }
 
     get(id: number): Observable<Vendor> {
-        return this.http.get(this.url + id) as Observable<Vendor>;
+        return this.http.get(this.url + "/" + id) as Observable<Vendor>;
     }
       
     save(vendor: Vendor): Observable<Vendor> {
@@ -29,6 +29,6 @@ export class VendorService {
     }
       
     delete(id: number): Observable<Vendor> {
-        return this.http.delete(this.url + id) as Observable<Vendor>;
+        return this.http.delete(this.url + "/" + id) as Observable<Vendor>;
     }
 }

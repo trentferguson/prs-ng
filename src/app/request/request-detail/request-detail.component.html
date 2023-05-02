@@ -1,53 +1,53 @@
 <app-menu></app-menu>
 
 <div>
-    <table class="table table-sm"> 
+    <table> 
         <tr>
             <td>Date Submitted:</td>
                 <td>
-                    <input placeholder="{{ request.submittedDate}}" type="text"> 
+                    <input [(ngModel)]="request.submittedDate" type="text" disabled> 
                 </td>
         </tr>
         <tr>
             <td>Date Needed:</td>
                 <td>
-                    <input placeholder="{{ request.dateNeeded }}" type="text"> 
+                    <input [(ngModel)]="request.dateNeeded" type="text" disabled> 
                 </td>
         </tr>
         <tr>
             <td>User:</td>
                 <td>
-                    <input placeholder="{{ request.user.username }}" type="text">
+                    <input [(ngModel)]="request.user.username" type="text" disabled> 
                 </td>
         </tr>
         <tr>
             <td>Description:</td>
                 <td>
-                    <input placeholder="{{ request.description }}" type="text">
+                    <input [(ngModel)]="request.description" type="text" disabled> 
                 </td>
         </tr>
         <tr>
             <td>Justification:</td>
                 <td>
-                    <input placeholder="{{ request.justification }}" type="text"> 
+                    <input [(ngModel)]="request.justification" type="text" disabled> 
                 </td>
         </tr>
         <tr>
             <td>Delivery Mode:</td>
                 <td>
-                    <input placeholder="{{ request.deliveryMode }}" type="text">
+                    <input [(ngModel)]="request.deliveryMode" type="text" disabled> 
                 </td>
         </tr>
         <tr>
             <td>Status:</td>
                 <td>
-                    <input placeholder="{{ request.status }}" type="text">
+                    <input [(ngModel)]="request.status" type="text" disabled> 
                 </td>
         </tr>
         <tr>
             <td>Rejection Reason:</td>
                 <td>
-                    <input placeholder="Reason for rejection" type="text">
+                    <input [(ngModel)]="request.reasonForRejection" type="text" disabled> 
                 </td>
         </tr>
         <tr>
@@ -74,7 +74,7 @@
                 <th>Total:</th>
             </tr>
         </thead>
-        <tr>
+        <tr *ngFor="let lineItem of lineItems">
             <td>{{lineItem.product.partNbr}}</td>
             <td>{{lineItem.product.name}}</td>
             <td>{{lineItem.product.vendor.name}}</td>

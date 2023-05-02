@@ -1,31 +1,56 @@
 <app-menu></app-menu>
 
-<div class="container">  
-    <form id="contact" action="" method="post">
-      <h3>Edit User Info</h3>
-      <br>
-      <fieldset>
-        <input placeholder="{{ user.firstName }}" type="text" tabindex="1" required>
-      </fieldset>
-      <fieldset>
-        <input placeholder="{{ user.lastName }}" type="text" tabindex="2" required>
-      </fieldset>
-      <fieldset>
-        <input placeholder="{{ user.phone }}" type="text" tabindex="3" required>
-      </fieldset>
-      <fieldset>
-        <input placeholder="{{ user.email }}" type="text" tabindex="4" required>
-      </fieldset>
-      <fieldset>
-        <input placeholder="{{ user.username}}" type="text" tabindex="5" required>
-      </fieldset>
-      <fieldset>
-        <input placeholder="{{ user.password }}" type="text" tabindex="6" required>
-      </fieldset>
-      <fieldset>
-        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
-      </fieldset>
-    </form>
-  </div>
+<div>
+    <table>
+        <tr>
+            <td>First Name:</td>
+                <td>
+                    <input [(ngModel)]="user.firstName" type="text"> 
+                </td>
+        </tr>
+        <tr>
+            <td>Last Name:</td>
+                <td>
+                    <input [(ngModel)]="user.lastName" type="text"> 
+                </td>
+        </tr>
+        <tr>
+            <td>Phone Number:</td>
+                <td>
+                    <input [(ngModel)]="user.phone" type="text"> 
+                </td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+                <td>
+                    <input [(ngModel)]="user.email" type="text"> 
+                </td>
+        </tr>
+        <tr>
+            <td>Username:</td>
+                <td>
+                    <input [(ngModel)]="user.username" type="text"> 
+                </td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+                <td>
+                    <input [(ngModel)]="user.password" type="text"> 
+                </td>
+        </tr>
+        <tr>
+            <td>Reviewer Status:</td>
+                <td>
+                    <input [(ngModel)]="user.reviewer" type="text"> 
 
-  <app-footer></app-footer>
+                </td>
+        </tr>
+        <tr>
+            <td>Admin Status:</td>
+                <td>
+                    <input [(ngModel)]="user.admin" type="text"> 
+
+                </td>
+        </tr>
+    </table>
+</div>

@@ -17,7 +17,7 @@ export class ProductService {
     }
 
     get(id: number): Observable<Product> {
-        return this.http.get(this.url + id) as Observable<Product>;
+        return this.http.get(this.url + "/" + id) as Observable<Product>;
     }
       
     save(product: Product): Observable<Product> {
@@ -29,7 +29,7 @@ export class ProductService {
     }
       
     delete(id: number): Observable<Product> {
-        return this.http.delete(this.url + id) as Observable<Product>;
+        return this.http.delete(this.url + "/" + id) as Observable<Product>;
     }
 
 }

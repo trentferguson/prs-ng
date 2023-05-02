@@ -1,36 +1,49 @@
 <app-menu></app-menu>
 
-<div class="container">  
-    <form id="contact" action="" method="post">
-      <h3>Edit Product</h3>
-      <br>
-      <fieldset>
-        <input placeholder="{{ product.photoPath }}" type="text" tabindex="1" required>
-      </fieldset>
-      <fieldset>
-        <input placeholder="{{ product.partNbr }}" type="text" tabindex="2" required>
-      </fieldset>
-      <fieldset>
-        <input placeholder="{{ product.name }}" type="text" tabindex="3" required>
-      </fieldset>
-      <fieldset>
-        <input list="Vendors">
-        <datalist id="Vendors">
-            <option value="Vendor 1"></option>
-            <option value="Vendor 2"></option>
-            <option value="Vendor 3"></option>
-        </datalist>
-      </fieldset>
-      <fieldset>
-        <input placeholder="{{ product.unit }}" type="text" tabindex="5" required>
-      </fieldset>
-      <fieldset>
-        <input placeholder="{{ product.price }}" type="text" tabindex="6" required>
-      </fieldset>
-      <fieldset>
-        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
-      </fieldset>
-    </form>
-  </div>
+<div>
+    <table>
+        <tr>
+            <td>Photo Path:</td>
+                <td>
+                    <input [(ngModel)]="product.photoPath" type="text"> 
+                </td>
+        </tr>
+        <tr>
+            <td>Part Number:</td>
+                <td>
+                    <input [(ngModel)]="product.partNbr" type="text" type="text"> 
+                </td>
+        </tr>
+        <tr>
+            <td>Name:</td>
+                <td>
+                    <input [(ngModel)]="product.name" type="text" type="text">
+                </td>
+        </tr>
+        <tr>
+            <td>Vendor:</td>
+                <td>
+                    <select>
+                        <option *ngFor="let vendor of vendors">
+                            {{ vendor.name }}
+                        </option>
+                    </select>
+                </td>
+        </tr>
+        <tr>
+            <td>Unit:</td>
+                <td>
+                    <input [(ngModel)]="product.unit" type="text"> 
+                </td>
+        </tr>
+        <tr>
+            <td>Price:</td>
+                <td>
+                    <input [(ngModel)]="product.price" type="text">
+                </td>
+        </tr>
+    </table>
+</div>
+
 
   <app-footer></app-footer>

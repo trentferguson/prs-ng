@@ -1,7 +1,7 @@
 <app-menu></app-menu>
 
 <div>
-    <table class="table table-sm">
+    <table>
         <tr>
             <td>First Name:</td>
                 <td>
@@ -11,40 +11,46 @@
         <tr>
             <td>Last Name:</td>
                 <td>
-                    <input placeholder="{{ user.lastName }}" type="text"> 
+                    <input [(ngModel)]="user.lastName" type="text" disabled> 
                 </td>
         </tr>
         <tr>
             <td>Phone Number:</td>
                 <td>
-                    <input placeholder="{{ user.phone }}" type="text">
+                    <input [(ngModel)]="user.phone" type="text" disabled> 
                 </td>
         </tr>
         <tr>
             <td>Email:</td>
                 <td>
-                    <input placeholder="{{ user.email }}" type="text">
+                    <input [(ngModel)]="user.email" type="text" disabled> 
                 </td>
         </tr>
         <tr>
             <td>Username:</td>
                 <td>
-                    <input placeholder="{{ user.username }}" type="text"> 
+                    <input [(ngModel)]="user.username" type="text" disabled> 
                 </td>
         </tr>
         <tr>
             <td>Password:</td>
                 <td>
-                    <input placeholder="{{ user.password }}" type="text">
+                    <input [(ngModel)]="user.password" type="text" disabled> 
                 </td>
         </tr>
         <tr>
             <td>Reviewer Status:</td>
-                <td></td>
+                <td>
+                    <input [(ngModel)]="user.reviewer" type="text" disabled> 
+
+                </td>
         </tr>
         <tr>
             <td>Admin Status:</td>
-                <td></td>
+                <td>
+                    <input [(ngModel)]="user.admin" type="text" disabled> 
+
+                </td>
         </tr>
         <tr>
             <td> 
