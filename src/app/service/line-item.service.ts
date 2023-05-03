@@ -8,12 +8,12 @@ import { Injectable } from '@angular/core';
 })
 
 export class LineItemService {
-    url: string = "http://localhost:8080/line-items";
+    url: string = "http://localhost:8080/request-lines";
 
     constructor(private http: HttpClient) { }
 
     list(id: number): Observable<LineItem> {
-        return this.http.get(this.url + "lines-for-pr/" + id) as Observable<LineItem>;
+        return this.http.get(this.url + "/" + id) as Observable<LineItem>;
     }
 
     get(id: number): Observable<LineItem> {

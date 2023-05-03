@@ -39,16 +39,16 @@
                 </td>
         </tr>
         <tr>
-            <td>Reviewer Status:</td>
+            <td>Reviewer:</td>
                 <td>
-                    <input [(ngModel)]="user.reviewer" type="text" disabled> 
+                    <input [(ngModel)]="user.reviewer" type="checkbox" [checked]="user.reviewer" disabled> 
 
                 </td>
         </tr>
         <tr>
-            <td>Admin Status:</td>
+            <td>Admin:</td>
                 <td>
-                    <input [(ngModel)]="user.admin" type="text" disabled> 
+                    <input [(ngModel)]="user.admin" type="checkbox" [checked]="user.admin" disabled> 
 
                 </td>
         </tr>

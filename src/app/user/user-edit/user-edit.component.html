@@ -39,18 +39,21 @@
                 </td>
         </tr>
         <tr>
-            <td>Reviewer Status:</td>
+            <td>Reviewer:</td>
                 <td>
-                    <input [(ngModel)]="user.reviewer" type="text"> 
+                    <input [(ngModel)]="user.reviewer" type="checkbox" [checked]="user.reviewer"> 
 
                 </td>
         </tr>
         <tr>
-            <td>Admin Status:</td>
+            <td>Admin:</td>
                 <td>
-                    <input [(ngModel)]="user.admin" type="text"> 
+                    <input [(ngModel)]="user.admin" type="checkbox" [checked]="user.admin"> 
 
                 </td>
         </tr>
     </table>
+    <button class="save-btn">
+        <img src="../../../assets/buttons/button_save-changes.png"/>
+    </button>
 </div>

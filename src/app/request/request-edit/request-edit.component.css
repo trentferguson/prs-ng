@@ -128,3 +128,9 @@ fieldset {
     text-align: center;
 }
 
+.save-btn {
+    border: none;
+    padding: 10px;
+    background-color: whitesmoke;
+}
+

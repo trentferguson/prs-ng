@@ -26,6 +26,7 @@ export class RequestDetailComponent implements OnInit {
     ngOnInit(): void {
         this.route.params.subscribe(p => this.id = p['id']);
         this.requestService.getRequest(this.id).subscribe(j => this.request = j as Request);
+        
         this.lineItemService.list(this.id).subscribe(j => this.lineItems = j as unknown as LineItem[]);
     }
 }
