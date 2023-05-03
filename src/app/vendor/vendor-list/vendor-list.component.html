@@ -2,14 +2,8 @@
 
 <div class="card">
     <div class="card-body">
-        <button class="create-btn">
-            <a routerLink="/vendor/create">
-                <img src="../../../assets/buttons/button_create-vendor.png"/>
-            </a>
-        </button>
         <table class="styled-table">  
             <thead>
-
                 <tr>
                     <th scope="col">Code</th>
                     <th scope="col">Name</th>
@@ -22,11 +16,8 @@
                     <th scope="col">Detail</th>
                     <th scope="col">Edit</th>
                 </tr> 
-
             </thead>
-
             <tbody>
-
                 <tr *ngFor="let vendor of vendors">
                     <td scope="row">{{ vendor.code }}</td>
                     <td scope="row">{{ vendor.name }}</td>
@@ -45,9 +36,13 @@
                             <img class="icon"  src="../../assets/icons/edit.png"></a>
                     </td>
                 </tr>
-
             </tbody>
-        </table> 
+        </table>
+        <button class="create-btn">
+            <a routerLink="/vendor/create">
+                <img src="../../../assets/buttons/button_create-vendor.png"/>
+            </a>
+        </button> 
     </div>
 </div>
 

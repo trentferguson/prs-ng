@@ -51,4 +51,8 @@ export class RequestService {
         return null;
     } 
 
+    getRequestsForReview(id: number) {
+        return this.http.get(this.url + "list-review" + "/" + id) as Observable<Request>;
+    }
+
 }

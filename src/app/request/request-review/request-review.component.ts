@@ -1,4 +1,8 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { User } from "src/model/user.class";
+import { UserService } from "src/app/service/user.service";
+import { Request } from "src/model/request.class";
+import { RequestService } from "src/app/service/request.service";
 
 @Component({
     selector: 'app-request-review',
@@ -6,75 +10,22 @@ import { Component } from "@angular/core";
     styleUrls: ['./request-review.component.css']
 })
 
-export class RequestReviewComponent {
+export class RequestReviewComponent implements OnInit{
     pageTitle: string = "Request Review";
-    request: any = 
-    {
-        "id": 1,
-        "description": "test request test",
-        "justification": "test",
-        "rejectionReason": "test",
-        "deliveryMode": "test",
-        "submittedDate": "2023-01-18T00:00:00",
-        "dateNeeded": "2023-01-18T00:00:00",
-        "status": "APPROVED",
-        "total": 9.99,
-        "user": {
-            "id": 1,
-            "username": "admin",
-            "password": "password",
-            "firstName": "Bulby",
-            "lastName": "Saur",
-            "phone": "5135551234",
-            "email": "admin@bulbasaur.com",
-            "admin": true,
-            "reviewer": true
-        }
-    }
+    requests: Request[] = [];
+    user: User = new User();
+    userid: number;
 
-    lineItem: any = 
-    {
-        "id": 1,
-        "request": {
-            "id": 1,
-            "description": "test request test",
-            "justification": "test",
-            "rejectionReason": "test",
-            "deliveryMode": "test",
-            "submittedDate": "2023-01-18T00:00:00",
-            "dateNeeded": "2023-01-18T00:00:00",
-            "status": "APPROVED",
-            "total": 9.99,
-            "user": {
-                "id": 1,
-                "username": "admin",
-                "password": "password",
-                "firstName": "Bulby",
-                "lastName": "Saur",
-                "phone": "5135551234",
-                "email": "admin@bulbasaur.com",
-                "admin": true,
-                "reviewer": true
-            }
-        },
-        "product": {
-            "id": 1,
-            "name": "Nuka Cola Quantum",
-            "price": 11.99,
-            "unit": "each",
-            "photoPath": null,
-            "vendor": {
-                "id": 1,
-                "code": "CODE-0076",
-                "name": "Nuka Cola",
-                "address": "76 Commonwealth Drive",
-                "city": "Boston",
-                "state": "MA",
-                "zip": "02108",
-                "email": "support@NukaCola.com"
-            },
-            "partNbr": "NC-0023"
-        },
-        "quantity": 555
+    constructor(
+        private requestService: RequestService,
+        private userService: UserService
+    ) {}
+    
+    ngOnInit(): void {
+        //get  the id of the logged in  user
+        this.userService.get(this.userid).subscribe(j => this.user = j as User);
+
+        //get list of all requests for review
+        this.requestService
     }
 }

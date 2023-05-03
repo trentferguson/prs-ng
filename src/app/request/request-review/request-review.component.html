@@ -3,19 +3,7 @@
 <div class="container">  
     <form id="contact" action="" method="post">
       <h3>Review Request</h3>
-      <br>
-      <fieldset>
-        <input placeholder="{{ request.submittedDate }}" type="text" tabindex="1" required>
-      </fieldset>
-      <fieldset>
-        <input placeholder="{{ request.dateNeeded }}" type="text" tabindex="2" required>
-      </fieldset>
-      <fieldset>
-        <input placeholder="{{ request.user.username }}" type="text" tabindex="3" required>
-      </fieldset>
-      <fieldset>
-        <input placeholder="{{ request.description }}" type="text" tabindex="4" required>
-      </fieldset>
+      <br> 
       <fieldset>
         <input list="delivery">
         <datalist id="delivery">
@@ -26,7 +14,7 @@
         </datalist>
       </fieldset>
       <fieldset>
-        <input placeholder="{{ request.status }}" type="text" tabindex="3" required>
+        <input placeholder="status" type="text" tabindex="3" required>
       </fieldset>
       <fieldset>
         <input placeholder="Reason for rejection" type="text" tabindex="3" required>
@@ -52,14 +40,6 @@
             <th>Total:</th>
         </tr>
     </thead>
-    <tr>
-        <td>{{lineItem.product.partNbr}}</td>
-        <td>{{lineItem.product.name}}</td>
-        <td>{{lineItem.product.vendor.name}}</td>
-        <td>${{lineItem.product.price}}</td>
-        <td>{{lineItem.quantity}}</td>
-        <td>${{lineItem.quantity * lineItem.product.price}}</td>
-    </tr>
 </table>
 
   <app-footer></app-footer>

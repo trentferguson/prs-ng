@@ -12,12 +12,12 @@ export class LineItemService {
 
     constructor(private http: HttpClient) { }
 
-    list(id: number): Observable<LineItem> {
-        return this.http.get(this.url + "/" + id) as Observable<LineItem>;
+    list(): Observable<LineItem> {
+        return this.http.get(this.url) as Observable<LineItem>;
     }
 
     get(id: number): Observable<LineItem> {
-        return this.http.get(this.url + id) as Observable<LineItem>;
+        return this.http.get(this.url + "/" + id) as Observable<LineItem>;
     }
       
     save(lineItem: LineItem): Observable<LineItem> {

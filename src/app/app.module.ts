@@ -27,6 +27,9 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './menu/menu.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LineItemListComponent } from './line-item/line-item-list/line-item-list.component';
+import { LineItemEditComponent } from './line-item/line-item-edit/line-item-edit.component';
+import { LineItemDetailComponent } from './line-item/line-item-detail/line-item-detail.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +55,10 @@ import { HttpClientModule } from '@angular/common/http';
     VendorCreateComponent,
     VendorDetailComponent,
     VendorEditComponent,
-    VendorListComponent
+    VendorListComponent,
+    LineItemListComponent,
+    LineItemEditComponent,
+    LineItemDetailComponent
   ],
   imports: [
     BrowserModule,

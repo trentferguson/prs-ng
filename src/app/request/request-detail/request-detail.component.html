@@ -63,26 +63,6 @@
         </tr>
     </table>
     <h2>Request Line Items</h2>
-    <table class="styled-table">
-        <thead>
-            <tr>
-                <th>Part Number:</th>
-                <th>Product Description:</th>
-                <th>Vendor:</th>
-                <th>Price:</th>
-                <th>Quantity:</th>
-                <th>Total:</th>
-            </tr>
-        </thead>
-        <tr *ngFor="let lineItem of lineItems">
-            <td>{{lineItem.product.partNbr}}</td>
-            <td>{{lineItem.product.name}}</td>
-            <td>{{lineItem.product.vendor.name}}</td>
-            <td>${{lineItem.product.price}}</td>
-            <td>{{lineItem.quantity}}</td>
-            <td>${{lineItem.quantity * lineItem.product.price}}</td>
-        </tr>
-    </table>
 </div>
-
+<app-line-item-list></app-line-item-list>
 <app-footer></app-footer>
